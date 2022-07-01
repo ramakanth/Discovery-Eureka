@@ -30,7 +30,7 @@ eureka.client.service-url.default-zone=http://localhost:8761/eureka
 
 pom.xml
 -----------
-                <dependency>
+    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
