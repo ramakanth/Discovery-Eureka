@@ -96,12 +96,12 @@ public class OrderController {
 }
 
 public class Order {
-	private long orderId;
-	private long customerId;
-	private String orderStatus;
-	private double orderTotal;
+private long orderId;
+private long customerId;
+private String orderStatus;
+private double orderTotal;
 
-	/* setters and getters, parameterized constructor */
+/* setters and getters, parameterized constructor */
 
 }
 
