@@ -100,8 +100,11 @@ public class Order {
 	private long customerId;
 	private String orderStatus;
 	private double orderTotal;
-	//setters and getters
+
+	/* setters and getters, parameterized constructor */
+
 }
+
 	
 application.properties
 ------------------------
