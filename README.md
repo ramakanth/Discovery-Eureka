@@ -47,7 +47,11 @@ pom.xml
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
-    
+   
+
+Test the Eureka URL:
+------------------------------------
+http://localhost:8761/
 
 Spring Boot Application : # order-service
 -----------------------------------------
@@ -60,6 +64,44 @@ public class OrderServiceApplication {
 	}
 }
 
+@RestController
+@RequestMapping("order")
+public class OrderController {
+
+    @GetMapping	
+	public List<Order> listOrders(){ 
+		return getOrders();
+	}
+    @GetMapping("/{id}")	
+	public List<Order> listOrdersByCustomerId(@PathVariable("id") int customerId){ 
+		return getOrdersByCustomerId(customerId);
+	}
+	public static List<Order> getOrders() {
+		Order order1 = new Order(4000, 1111,"fulfilled",20000 );
+		Order order2 = new Order(2000, 1113,"fulfilled",30000 );
+		Order order3 = new Order(1000, 1112,"fulfilled",40000 );
+		Order order4 = new Order(3000, 1111,"fulfilled",50000 );
+		List<Order> orders = new ArrayList<Order>();
+		orders.add(order1);
+		orders.add(order2);
+		orders.add(order3);
+		orders.add(order4);
+	  return orders;	
+	}
+	public static List<Order> getOrdersByCustomerId(int custId) {
+		List<Order> orders = getOrders();
+		List<Order> collect = orders.stream().filter(e -> e.getCustomerId()== custId).collect(Collectors.toList());
+	  return collect;	
+	}
+}
+public class Order {
+	private long orderId;
+	private long customerId;
+	private String orderStatus;
+	private double orderTotal;
+	//setters and getters
+}
+	
 application.properties
 ------------------------
 
@@ -80,3 +122,8 @@ pom.xml
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
     
+    
+test the rest url
+---------------------
+http://localhost:3001/order/1111
+
