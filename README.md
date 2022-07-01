@@ -4,7 +4,9 @@ Spring Boot Application : # eurekaserver
 -----------------------------------------
 
 @SpringBootApplication
+
 @EnableEurekaServer
+
 public class EurekaserverApplication {
 
 	public static void main(String[] args) {
