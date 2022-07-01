@@ -12,8 +12,11 @@ public class EurekaserverApplication {
 	}
 
 }
+
+
 application.properties
 ------------------------
+
 spring.application.name=eurekaserver
 server.port=8761
 eureka.client.registerWithEureka=false
@@ -27,7 +30,7 @@ eureka.client.service-url.default-zone=http://localhost:8761/eureka
 
 pom.xml
 -----------
-    <dependency>
+                <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -47,15 +50,17 @@ public class OrderServiceApplication {
 		SpringApplication.run(OrderServiceApplication.class, args);
 	}
 }
+
 application.properties
 ------------------------
+
 server.port=1111
 spring.application.name=ORDER-SERVICE
 eureka.client.service-url.default-zone=http://localhost:8761/eureka/
 
 pom.xml
 -------------------
-    <dependency>
+                 <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
