@@ -17,23 +17,16 @@ public class EurekaserverApplication {
 application.properties
 ------------------------
 
-spring.application.name=eurekaserver
+spring.application.name=eurekaserver	
 server.port=8761
-eureka.client.registerWithEureka=false
-
-eureka.client.fetchRegistry=false
-
-eureka.instance.hostname=localhost
-
-eureka.client.service-url.default-zone=http://localhost:8761/eureka
-
-#eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
-
-#server.port=8761
-
-#eureka.client.register-with-eureka=false
-
-#eureka.client.fetch-registry=false
+eureka.client.registerWithEureka=false	
+eureka.client.fetchRegistry=false	
+eureka.instance.hostname=localhost	
+eureka.client.service-url.default-zone=http://localhost:8761/eureka	
+#eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/	
+#server.port=8761	
+#eureka.client.register-with-eureka=false	
+#eureka.client.fetch-registry=false	
 
 pom.xml
 -----------
